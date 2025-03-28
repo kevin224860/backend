@@ -1,0 +1,16 @@
+steps:
+# Update container image on an existing VM instance
+- name: 'gcr.io/cloud-builders/gcloud'
+  id: 'update-container'
+  args: [
+    'compute', 'instances', 'update-container', 'flask_instance',
+    '--zone=northamerica-northeast2-a',
+    '--container-image=kevlar0224/flask-app:latest',
+    '--container-restart-policy=always'
+  ]
+
+# Timeout for the entire build process
+timeout: '600s'
+
+options:
+  logging: CLOUD_LOGGING_ONLY
