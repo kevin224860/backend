@@ -3,7 +3,7 @@ steps:
 - name: 'gcr.io/cloud-builders/gcloud'
   id: 'update-container'
   args: [
-    'compute', 'instances', 'update-container', 'flask_instance',
+    'compute', 'instances', 'update-container', 'flask-app-instance',
     '--zone=northamerica-northeast2-a',
     '--container-image=kevlar0224/flask-app:latest',
     '--container-restart-policy=always'
